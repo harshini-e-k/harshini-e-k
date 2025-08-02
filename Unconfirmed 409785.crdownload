@@ -1,0 +1,28 @@
+// Typewriter Effect for "About Me"
+const typeText = "I am a curious and passionate student exploring the field of cybersecurity and AI.";
+let i = 0;
+const speed = 40;
+
+function typeWriter() {
+  const bio = document.querySelector("#bio p");
+  if (i < typeText.length) {
+    bio.textContent += typeText.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+// Dark Mode Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  // Welcome message
+  alert("👋 Welcome to Harshini's Portfolio!");
+
+  // Start typewriter effect
+  typeWriter();
+
+  // Dark mode toggle logic
+  const toggleBtn = document.getElementById("dark-mode-toggle");
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+});
